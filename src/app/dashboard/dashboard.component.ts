@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   }
   isEmpty():boolean{
-    if(this.students.length>0){
+    if(this.state.length>0){
       return true;
     }
      return false;
