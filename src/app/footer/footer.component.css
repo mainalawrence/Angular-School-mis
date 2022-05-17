@@ -1,0 +1,16 @@
+.footer{
+    position:absolute;
+    bottom:0;
+    width:90%;
+    height:10%;   
+    background:orange;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container{
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+ 
+}
