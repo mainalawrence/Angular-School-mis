@@ -1,0 +1,14 @@
+<div *ngIf="state.logedin" class="container">
+    <div class="center">
+    <div class="card">
+      <form class="form">
+        <input type="text" ngModel #username class="form-controllers" placeholder="Enter Username">
+        <input type="password" #password class="form-controllers" ngModel placeholder="Enter Password">
+        <div class="form-group">
+        <a routerLink="/students"> <input type="submit"  value="Login" class="btn btn-success"></a>
+        <input type="button" value="Clear" (click)="username.value='';password.value=''" class="btn btn-danger">
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>

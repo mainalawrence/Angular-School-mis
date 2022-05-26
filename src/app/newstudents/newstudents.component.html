@@ -1,0 +1,10 @@
+
+<app-navbar></app-navbar>
+<div class="form">
+    <label class="label " for="form">Add Student</label>
+    <label *ngiF="isEmpty()" class="bg-r">*please Input a Name</label>
+    <input  #name type="text" placeholder="Enter Name.." class='form-control'/>
+    <input  #balance type="number" placeholder="Enter Balance." class='form-control'/>
+    <input (click)="create({name:name.value,balance:balance.valueAsNumber})" type="submit" value="Add Student" class='btn btn-o'/>
+</div>
+<app-footer></app-footer>

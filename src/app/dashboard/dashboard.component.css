@@ -24,7 +24,11 @@ label{
     border-radius: 20px;
     border-style: solid;
     padding: 4%;
+    width: 60%;
+    margin: auto;
 }
+
+
 .label{
     padding: 1%;
     background-color: orange;
@@ -57,6 +61,7 @@ label{
 }
 
 .message{
-    background-color: transparent !important;
+    background-color:transparent !important;
     margin: 4%;
+    
 }

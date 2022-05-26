@@ -1,9 +1,15 @@
+<div *ngIf="state.logedin">
 <div class="container flex-b b-p">
-    <div class="container">
-        <h4 class="brand">scHOOL</h4>
+    <div class="container flex-c">
+        <img src="../../assets/icon.png" alt="icon"/>
+        <h4 class="brand">Jira Tech</h4>
     </div>
     <div class="container flex-c">
-       login
+       <a routerLink="/addStudent">New</a>
+       <a routerLink="/students">students</a>
+       <a routerLink="/StudentwithBalance">swithBalance</a>
+       <a routerLink="/StudentwotBalance">soutBalance</a>
+       <a (click)="logout()" routerLink="/">logout</a> 
     </div>
 </div>
- 
+</div>

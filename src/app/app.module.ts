@@ -6,17 +6,31 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { AllstudentComponent } from './allstudent/allstudent.component';
+import { StudentWBalanceComponent } from './student-wbalance/student-wbalance.component';
+import { StudentWOTBalanceComponent } from './student-wotbalance/student-wotbalance.component';
+import { RouterModule } from '@angular/router';
+import { NewstudentsComponent } from './newstudents/newstudents.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    AllstudentComponent,
+    StudentWBalanceComponent,
+    StudentWOTBalanceComponent,
+    NewstudentsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

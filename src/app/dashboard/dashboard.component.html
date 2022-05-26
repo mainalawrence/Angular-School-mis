@@ -1,32 +1,13 @@
 <div class="container">
    <div class="flex-b">
    <div class="container">
-    <div class="form">
-        <label class="label " for="form">Add Student</label>
-        <label *ngiF="isEmpty()" class="bg-r">*please Input a Name</label>
-        <input  #name type="text" placeholder="Enter Name.." class='form-control'/>
-        <input  #balance type="number" placeholder="Enter Balance." class='form-control'/>
-        <input (click)="create({name:name.value,balance:balance.valueAsNumber})" type="submit" value="Add Student" class='btn btn-o'/>
-    </div>
+  
    </div>
     <div class="container m-o">
         <nav>
             <h3>student Name</h3>
             <h3>Balance</h3>
         </nav>
-        <div class="list-header">
-            <label (click)="Allstudent()" >All Student</label>
-            <label (click)="Withbalance()" >Student With Balance</label>
-            <label (click)="Withoutbalance()">Student W/O Balance</label>
-        </div>
-        <div class="list-data" *ngFor="let student of students">
-           <div class="container flex-b">
-            <p >{{student.name}}</p>
-            <p [ngStyle]="{color:student.balance>0?'green':'red'}" >{{student.balance}}</p>
-           </div>
-        </div>
-        
-        <label *ngiF="isEmpty()" class="message"> No Student !!</label>
     </div>
    </div>
 </div>
