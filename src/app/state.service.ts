@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,11 +7,14 @@ import { Injectable } from '@angular/core';
 export class StateService {
   students:any[]=[];
 
-  logedin:boolean=true;
-  constructor() { }
-  login(){
-    this.logedin=!this.logedin
-  }
+  private logginState=new BehaviorSubject<boolean>(false);
+
+   logedin=this.logginState.asObservable();
+    constructor() { }
+
+login(){
+  this.logginState.next(!this.logginState);
+}
   isEmpty():boolean{
     return !this.students.length;
   }

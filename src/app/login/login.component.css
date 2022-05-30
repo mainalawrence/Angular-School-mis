@@ -46,8 +46,7 @@
     color: white;
     outline: 0px;
     border-radius: 10px;
-    border-width: 0px;
-   
+    border-width: 0px; 
 }
 .btn:hover{
     opacity: 80%;

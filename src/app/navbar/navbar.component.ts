@@ -6,16 +6,14 @@ import { StateService } from '../state.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+   loggedin?:boolean;
   constructor(public state:StateService) { 
 
   }
-   
   ngOnInit(): void {
-
+    this.state.logedin.subscribe(res=>this.loggedin=res);
   }
-  
   logout(){
-    this.state.login();
+   return this.loggedin;
   }
 }
