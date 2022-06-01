@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from './admin.guard';
 import { AllstudentComponent } from './allstudent/allstudent.component';
 import { LoginComponent } from './login/login.component';
 import { NewstudentsComponent } from './newstudents/newstudents.component';
@@ -7,11 +8,11 @@ import { StudentWBalanceComponent } from './student-wbalance/student-wbalance.co
 import { StudentWOTBalanceComponent } from './student-wotbalance/student-wotbalance.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent},
-  {path:'addStudent', component:NewstudentsComponent},
-  {path:'students', component:AllstudentComponent},
-  {path:'StudentwithBalance', component:StudentWBalanceComponent},
-  {path:'StudentwotBalance', component:StudentWOTBalanceComponent}
+  {path: '', component: LoginComponent},
+  {path:'addStudent', component:NewstudentsComponent,canActivate:[AdminGuard]},
+  {path:'students', component:AllstudentComponent,canActivate:[AdminGuard]},
+  {path:'StudentwithBalance', component:StudentWBalanceComponent,canActivate:[AdminGuard]},
+  {path:'StudentwotBalance', component:StudentWOTBalanceComponent,canActivate:[AdminGuard]}
 
 ];
 

@@ -1,7 +1,7 @@
 .footer{
-    position:absolute;
+   position:relative;
     bottom:0;
-    width:90%;
+    width:100%;
     height:10%;   
     background:orange;
     margin-bottom: 1%;
@@ -9,8 +9,9 @@
     margin-right: auto;
 }
 .container{
-    align-items: center;
-    justify-content: space-around;
     display: flex;
- 
+    align-items: center;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
 }

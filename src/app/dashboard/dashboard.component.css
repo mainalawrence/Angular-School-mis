@@ -11,10 +11,18 @@ width: 100%;
 display: flex;
 justify-content: space-evenly;
 }
-label{
-    background-color: orange;
-    padding: 2% 1%;
-    border-radius: 10px;
+.form-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+input.ng-valid.ng-touched{
+    border-left: 10px solid #42A948;
+}
+input.ng-invalid.ng-touched{
+    border-left: 10px solid #a94442;
 }
 .form{
     display: flex;
@@ -24,7 +32,7 @@ label{
     border-radius: 20px;
     border-style: solid;
     padding: 4%;
-    width: 60%;
+    width: 30%;
     margin: auto;
 }
 
@@ -47,19 +55,16 @@ label{
     padding: 1% 2%;
     margin: 2% 0;
     border-radius: 10px;
-
 }
 .btn{
     padding: 2%;
     margin-top: 2%;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 20px;
-
 }
 .btn:hover{
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-
 .message{
     background-color:transparent !important;
     margin: 4%;

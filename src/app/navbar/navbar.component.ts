@@ -14,6 +14,6 @@ export class NavbarComponent implements OnInit {
     this.state.logedin.subscribe(res=>this.loggedin=res);
   }
   logout(){
-   return this.loggedin;
+   return this.state.logout();
   }
 }

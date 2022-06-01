@@ -1,10 +1,46 @@
 
 <app-navbar></app-navbar>
-<div class="form">
-    <label class="label " for="form">Add Student</label>
-    <label *ngiF="isEmpty()" class="bg-r">*please Input a Name</label>
-    <input  #name type="text" placeholder="Enter Name.." class='form-control'/>
-    <input  #balance type="number" placeholder="Enter Balance." class='form-control'/>
-    <input (click)="create({name:name.value,balance:balance.valueAsNumber})" type="submit" value="Add Student" class='btn btn-o'/>
+<form [formGroup]="regForm" (ngSubmit)="onSubmit">
+    <div class="form-group">
+        <label class="form-label">Registration Number</label>
+        <input id="reg" type="text" formControlName="reg" class="form-control" placeholder="Enter Reg No..."/>
+        <div *ngIf="regForm.get('reg')?.invalid && regForm.get('reg')?.touched"
+    class="alert alert-danger">
+     Registration Number is required
+   </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Enter Your Name</label>
+        <input id="name" type="text" formControlName="name" class="form-control" placeholder="Enter name..."/>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Balance</label>
+        <input id="balance" type="number" formControlName="balance" class="form-control" placeholder="Enter Balance..."/>
+    </div>
+    <div class="form-group">
+        <label class="form-label"> Select School</label>
+        <input id="school" type="text" formControlName="school" class="form-control" placeholder="Enter name..."/>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Select Course</label>
+        <input id="course" type="text" formControlName="course" class="form-control" placeholder="Enter course..."/>
+    </div>
+    <div formGroupName="contact" class="form-group">
+        <div class="form-group">
+            <label class="form-label">email</label>
+            <input id="email" type="email" formControlName="email" class="form-control" placeholder="Enter email..." required/>
+            <div *ngIf=" getemail()?.invalid &&  getemail()?.touched"
+            class="alert alert-danger">
+             Email is required
+           </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">phone</label>
+            <input id="phone" type="number" formControlName="phone" class="form-control" placeholder="Enter phone..."/>
+        </div>
+    </div>
+<div class="form-group">
+    <input  type="submit" value="Add Student" class='btn btn-o'/>
 </div>
+</form>
 <app-footer></app-footer>
