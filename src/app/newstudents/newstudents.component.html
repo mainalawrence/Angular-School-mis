@@ -1,29 +1,47 @@
 
 <app-navbar></app-navbar>
-<form [formGroup]="regForm" (ngSubmit)="onSubmit">
+<form [formGroup]="regForm" (ngSubmit)="onSubmit($event)">
     <div class="form-group">
         <label class="form-label">Registration Number</label>
         <input id="reg" type="text" formControlName="reg" class="form-control" placeholder="Enter Reg No..."/>
         <div *ngIf="regForm.get('reg')?.invalid && regForm.get('reg')?.touched"
-    class="alert alert-danger">
-     Registration Number is required
-   </div>
+         class="alert alert-danger">
+         Registration Number is required
+        </div>
     </div>
     <div class="form-group">
         <label class="form-label">Enter Your Name</label>
         <input id="name" type="text" formControlName="name" class="form-control" placeholder="Enter name..."/>
+        <div *ngIf="getname()?.invalid && getname()?.touched"
+         class="alert alert-danger">
+         Name is required
+        </div>
     </div>
     <div class="form-group">
         <label class="form-label">Balance</label>
         <input id="balance" type="number" formControlName="balance" class="form-control" placeholder="Enter Balance..."/>
+       <div *ngIf="getbalance()?.value===null && getbalance()?.touched"
+        class="alert alert-danger">
+       Invalid Balance 
+       </div>
     </div>
     <div class="form-group">
         <label class="form-label"> Select School</label>
         <input id="school" type="text" formControlName="school" class="form-control" placeholder="Enter name..."/>
+        <div *ngIf="getschool()?.invalid && getschool()?.touched"
+        class="alert alert-danger">
+        School is required
+       </div>
     </div>
     <div class="form-group">
         <label class="form-label">Select Course</label>
-        <input id="course" type="text" formControlName="course" class="form-control" placeholder="Enter course..."/>
+        <select id="course" formControlName="course" class="form-control">
+            <option *ngFor="let Course of Courses">{{Course}}</option>
+        </select>
+        <div *ngIf="getcourse()?.invalid && getcourse()?.touched"
+        class="alert alert-danger">
+        Course is required
+       </div>
     </div>
     <div formGroupName="contact" class="form-group">
         <div class="form-group">
@@ -37,10 +55,18 @@
         <div class="form-group">
             <label class="form-label">phone</label>
             <input id="phone" type="number" formControlName="phone" class="form-control" placeholder="Enter phone..."/>
+            <div *ngIf=" getPhone()?.invalid &&  getPhone()?.touched"
+            class="alert alert-danger">
+            phone is required
+           </div>
+           <div *ngIf=" getPhone()?.value<10 && getPhone()?.touched"
+           class="alert alert-danger">
+           phone Number is invalid
+          </div>
         </div>
     </div>
 <div class="form-group">
-    <input  type="submit" value="Add Student" class='btn btn-o'/>
+    <input  [disabled]="!regForm.valid" type="submit" value="Add Student" class='btn btn-o'/>
 </div>
 </form>
 <app-footer></app-footer>

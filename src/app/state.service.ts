@@ -5,10 +5,23 @@ import { BehaviorSubject } from 'rxjs';
   providedIn:'root'
 })
 export class StateService {
-  students:any[]=[];
+  private data=new BehaviorSubject<any[]>([{
+    "reg": "21",
+    "name": "lawrence",
+    "balance": 200,
+    "school": "kos",
+    "course": "Javascript",
+    "contact": {
+      "email": "mainalawrence32@gmail.com",
+      "phone": 23456789
+    }
+  }]);
 
   private logginState=new BehaviorSubject<boolean>(false);
+
    logedin=this.logginState.asObservable();
+   students=this.data.asObservable();
+
     constructor() { }
 
 login(){
@@ -17,8 +30,22 @@ login(){
 logout(){
   this.logginState.next(false);
 }
+addStudent(data:any){
+  this.data.next(data);
+  console.log(data);
+  this.data.subscribe(res=>{
+    console.log(res);
+    
+  })
+  
+}
   isEmpty():boolean{
-    return !this.students.length;
+    let returntype=false
+     this.students.subscribe(
+      (res)=>{
+        returntype=!res.length}
+    );
+    return returntype
   }
 }
 

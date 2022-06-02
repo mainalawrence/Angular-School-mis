@@ -10,12 +10,13 @@ import {FormBuilder,FormGroup,FormArray, Validators} from '@angular/forms'
 export class NewstudentsComponent implements OnInit {
 
    regForm!:FormGroup;
+   Courses=["_____Select____","Javascript","Typescript","Java","C++","Python","MYSQL"]
   constructor(private state:StateService,private fb:FormBuilder) { }
 
   ngOnInit(){
     const contacts=this.fb.group({
       email:['',[Validators.required,Validators.email]],
-      phone:['',[Validators.required,Validators.maxLength(11)]],
+      phone:['',[Validators.required,Validators.min(10)]],
     })
     this.regForm=this.fb.group({
       reg:['',Validators.required],
@@ -49,13 +50,15 @@ export class NewstudentsComponent implements OnInit {
     return this.regForm.get('contact')?.get('phone');
   }
 
-  onSubmit() { 
-    console.log(this.regForm); 
+  onSubmit($event:any) { 
+    $event.preventDefault();
+    console.log(this.regForm.value); 
+    this.state.addStudent(this.regForm.value);
    }
   create(data:any){
 
   }
   isEmpty():boolean{
-    return !this.state.students.length;
+    return true;
   }
 }

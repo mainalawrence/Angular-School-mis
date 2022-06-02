@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StateService } from '../state.service';
 
 @Component({
   selector: 'app-allstudent',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllstudentComponent implements OnInit {
   students:any[]=[];
-  constructor() { }
+  constructor(private data:StateService) { }
   ngOnInit(): void {
+    this.data.students.subscribe(items=>this.students=items)
   }
   isEmpty():boolean{
     return !this.students.length;
