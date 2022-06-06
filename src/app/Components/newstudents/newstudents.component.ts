@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StateService } from '../state.service';
+import { StateService } from '../../Services/state.service';
+
 import {FormBuilder,FormGroup,FormArray, Validators} from '@angular/forms'
 
 @Component({
@@ -49,14 +50,14 @@ export class NewstudentsComponent implements OnInit {
  getPhone(){
     return this.regForm.get('contact')?.get('phone');
   }
-
+  
   onSubmit($event:any) { 
     $event.preventDefault();
     console.log(this.regForm.value); 
     this.state.addStudent(this.regForm.value);
    }
   create(data:any){
-
+    
   }
   isEmpty():boolean{
     return true;

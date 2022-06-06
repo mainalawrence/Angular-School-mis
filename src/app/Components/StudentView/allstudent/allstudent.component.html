@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
-<div class="list-data" *ngFor="let student of students">
+<div class="list-data" *ngFor="let student of this.data.db">
     <div class="container flex-b">
      <p >{{student.name}}</p>
      <p [ngStyle]="{color:student.balance>0?'green':'red'}" >{{student.balance}}</p>

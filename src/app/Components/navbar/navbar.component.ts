@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StateService } from '../state.service';
+import { StateService } from '../../Services/state.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
