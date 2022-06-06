@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
 import { NewstudentsComponent } from './Components/newstudents/newstudents.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { StudentComponent } from './student/student.component';
+import { StudentComponent } from './Components/StudentView/student/student.component';
 
 @NgModule({
   declarations: [

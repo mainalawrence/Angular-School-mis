@@ -6,7 +6,28 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class StateService {
   
- public db:any[]=[];
+ public db:any[]=[{
+  "reg": "21",
+  "name": "lawrence",
+  "balance": 200,
+  "school": "kos",
+  "course": "Javascript",
+  "contact": {
+    "email": "mainalawrence32@gmail.com",
+    "phone": 23456789
+  }
+},
+{
+  "reg": "21",
+  "name": "lawrence",
+  "balance": 200,
+  "school": "kos",
+  "course": "Javascript",
+  "contact": {
+    "email": "mainalawrence32@gmail.com",
+    "phone": 23456789
+  }
+}];
    data=new BehaviorSubject<any[]>([{
     "reg": "21",
     "name": "lawrence",

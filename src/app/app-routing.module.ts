@@ -11,8 +11,8 @@ const routes: Routes = [
   {path: '', component: LoginComponent},
   {path:'addStudent', component:NewstudentsComponent,canActivate:[AdminGuard]},
   {path:'students', component:AllstudentComponent,canActivate:[AdminGuard]},
-  {path:'StudentwithBalance', component:StudentWBalanceComponent,canActivate:[AdminGuard]},
-  {path:'StudentwotBalance', component:StudentWOTBalanceComponent,canActivate:[AdminGuard]}
+  {path:'StudentwithBalance', component:AllstudentComponent,canActivate:[AdminGuard]},
+  {path:'StudentwotBalance', component:AllstudentComponent,canActivate:[AdminGuard]}
 
 ];
 

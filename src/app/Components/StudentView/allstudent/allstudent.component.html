@@ -1,10 +1,19 @@
 <app-navbar></app-navbar>
+<div *ngIf="HandlestudentsRoute()" class="grid">
+    <div class="" *ngFor="let student of students">
+        <app-student [data]="student"></app-student>
+     </div>
+</div>
+<div *ngIf="HandlestudentswbalanceRoute()" class="grid">
+    <div class="" *ngFor="let student of students">
+        <app-student [data]="student"></app-student>
+     </div>
+</div>
+<div *ngIf="HandlestudentswotRoute();" class="grid">
+    <div class="" *ngFor="let student of students">
+        <app-student [data]="student"></app-student>
+     </div>
+</div>
 
-<div class="list-data" *ngFor="let student of this.data.db">
-    <div class="container flex-b">
-     <p >{{student.name}}</p>
-     <p [ngStyle]="{color:student.balance>0?'green':'red'}" >{{student.balance}}</p>
-    </div>
- </div>
- <label *ngiF="isEmpty()" class="message"> No Student !!</label>
+ <label *ngIf="isEmpty()" class="message"> No Student !!</label>
 <app-footer></app-footer>
