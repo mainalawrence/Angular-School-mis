@@ -6,11 +6,13 @@ nav{
     background-color: orange;
     margin-bottom: 1%;
 }
+
 .list-header{
 width: 100%;
 display: flex;
 justify-content: space-evenly;
 }
+
 .form-group{
     display: flex;
     justify-content: center;
@@ -18,27 +20,34 @@ justify-content: space-evenly;
     flex-direction: column;
     width: 100%;
 }
+
 .form-label{
     width: 30%;
     margin: 2% 0 0 0; 
     font-weight: bold;
     text-align: start;
 }
+
 input.ng-valid.ng-touched{
     border-left: 10px solid #42A948;
 }
+
 input.ng-invalid.ng-touched{
     border-left: 10px solid #a94442;
 }
+
 select.ng-valid.ng-touched{
     border-left: 10px solid #42A948;
 }
+
 select.ng-invalid.ng-touched{
     border-left: 10px solid #a94442;
 }
+
 select{
     width: 35%;
 }
+
 .form{
     display: flex;
     justify-content: center;
