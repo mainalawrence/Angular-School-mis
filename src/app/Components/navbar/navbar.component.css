@@ -4,22 +4,26 @@ margin-left: auto;
 margin-right: auto;
 padding: 0.5%;
 }
+
 .flex-b{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .flex-c{
 display: flex;
 justify-content: center;
 align-items: center;
 }
+
 .brand{
     font: size 20px;
     font-weight: bolder;
     border-radius: 10px;
     border-width: 1px;
 }
+
 a{
     margin: 0px 1%;
     text-decoration: none;
